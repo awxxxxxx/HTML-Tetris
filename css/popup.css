@@ -1,0 +1,23 @@
+html,body{
+    margin:0;
+    clear:both;
+}
+
+
+#GameFrame,#score,#Next{
+    margin-top:10px;
+    border:2px solid #1FDA9A;
+}
+#GameFrame{
+    margin-left:-10px;
+}
+
+#score{
+    width:100px;
+    height:30px;
+}
+
+.btn{
+    margin-top:20px;
+    margin-left:-14px;
+}
