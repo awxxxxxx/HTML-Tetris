@@ -8,6 +8,7 @@
 /***方块图片的函数,返回一个图片对象***/
 
 var image = function() {
+
     this.s = new Array(12);
     this.icon = new Array(12);
     for(var i = 0; i < 12; i++){
@@ -22,10 +23,12 @@ var image = function() {
 /***七种方块的坐标****/
 
 var diaPoint = function(n) {
+
     var point =function(x,y) {
         this.x = x;
         this.y = y;
     }
+
     this.Point = new Array(7);
     this.Point[0] = [new point(4,0),new point(5,0),new point(6,0),new point(7,0)];
     this.Point[1] = [new point(4,0),new point(5,0),new point(6,0),new point(5,1)];
