@@ -12,12 +12,26 @@ var image = function() {
     this.s = new Array(12);
     this.icon = new Array(12);
     for(var i = 0; i < 12; i++){
-        s[i] = './image/game/' + (i+1) + '.png';
-        icon[i] = new Image();
-        icon[i].src = s[i];
+        this.s[i] = './image/game/' + (i+1) + '.png';
+        this.icon[i] = new Image();
+        this.icon[i].src = this.s[i];
     }
     return icon;
 
+};
+
+/*********下一个方块的图片对象***************/
+
+var imageNext = function() {
+
+    this.sNext = new Array(12);
+    this.nextIcon = new Array(12);
+    for(var i = 0; i < 12; i++){
+        this.sNext[i] = './image/next/' +'n'+ (i + 1)+'.png';
+        this.nextIcon[i] = new Image();
+        this.nextIcon[i].src = this.sNext[i];
+    }
+    return this.nextIcon;
 };
 
 /***七种方块的坐标****/

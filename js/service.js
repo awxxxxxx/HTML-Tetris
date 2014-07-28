@@ -39,6 +39,10 @@ var startGame = function() {
     InitAct();
 
     InitcvsGame(service.GameMap,service.points,service.nowType);
+
+    //调用draw.js文件中的InitcvsNext方法
+
+    InitcvsNext(service.nextType);
 };
 
 
@@ -71,6 +75,9 @@ var moveRight = function() {
 /*******方向键下(下落)************/
 
 var moveDown = function() {
+
+    //能下落则不继续
+
     if(move(0,1)){
         return;
     }
@@ -78,19 +85,28 @@ var moveDown = function() {
         service.GameMap[service.points[i].x][service.points[i].y] = true;
     }
 
-    //随即生成下一个方块
+    //调用加分方法
 
-    service.nextType = parseInt(Math.random * 7);
+    addLine();
 
     //生成当前方块
 
-    service.nowType = parseInt(Math.random * 7);
+    service.nowType = service.nextType;
+
+    //随即生成下一个方块
+
+    service.nextType = parseInt(Math.random() * 7);
+
 
     //调用diaAct.js文件中的InitAct方法
 
     InitAct();
 
     InitcvsGame(service.GameMap,service.points,service.nowType);
+
+    //调用draw.js文件中的InitcvsNext方法
+
+    InitcvsNext(service.nextType);
 };
 
 

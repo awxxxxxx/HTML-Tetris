@@ -87,6 +87,8 @@ var Rotate = function() {
         }
     }
     for(var i = 1; i < Service.points.length; i++){
+        nowX = Service.points[0].y + Service.points[0].x - Service.points[i].y;
+        nowY = Service.points[0].y - Service.points[0].x + Service.points[i].x;
         Service.points[i].x = nowX;
         Service.points[i].y = nowY;
     }
