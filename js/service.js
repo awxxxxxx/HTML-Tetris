@@ -43,6 +43,7 @@ var startGame = function() {
     //调用draw.js文件中的InitcvsNext方法
 
     InitcvsNext(service.nextType);
+    $('#score').empty();
 };
 
 
@@ -107,6 +108,12 @@ var moveDown = function() {
     //调用draw.js文件中的InitcvsNext方法
 
     InitcvsNext(service.nextType);
+
+    //判断游戏是否失败
+
+   if(isLose()){
+       reSet();
+   }
 };
 
 
@@ -117,9 +124,11 @@ var addLine = function() {
         if(isCanRemoveLine(i)){
             Line++;
             removeLine(i);
-            alert(Line);
         }
     }
+
+    $('#score').empty();
+    $('#score').append("<p>&nbsp" + (Line * 20) + "分</p>");
 };
 
 
@@ -143,7 +152,7 @@ var removeLine = function(rowNumber) {
         }
         service.GameMap[x][0] = false;
     }
-    InitcvsGame(service.GameMap,service.nowType);
+    InitcvsGame(service.GameMap,service.points,service.nowType);
 };
 
 /*******判断游戏是否失败**********/
@@ -157,4 +166,9 @@ var isLose = function() {
     return false;
 };
 
+/*****游戏失败时的重置函数*****/
 
+var reSet = function() {
+    Control.isLose = true;
+    alert("少侠你完蛋了!");
+};

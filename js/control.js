@@ -5,8 +5,20 @@
  *控制游戏的逻辑层
  *@author:Waterbear
  */
+/****游戏控制的全局变量*****/
+
+var Control = {
+    isStart:null,   //游戏是否开始
+    timer:null,     //定时器
+    isPause:false,    //游戏是否结束
+    isLose:false
+};
+
 
 function keyPress(e){
+    if(!Control.isStart){
+        return;
+    }
     var e = e || event;
     var currKey = e.keyCode || e.which || e.charCode;
     switch(currKey){
@@ -23,11 +35,33 @@ $(document).ready(function() {
 
 /****测试函数****/
     $('#start').click(function() {
-
+        Control.isStart = true;
+        Control.isPause = false;
+        Control.isLose = false;
+        $('#stop').text("暂停");
         startGame();
+        clearInterval(Control.timer);
+        Control.timer = setInterval(function() {
+            if(Control.isPause){
+                return;
+            }
+            if(Control.isLose){
+                clearInterval(Control.timer);
+                return;
+            }
+            moveDown();
+        },500);
     });
+    $('#stop').click(function() {
+        Control.isPause = !Control.isPause;
+        if(Control.isPause){
+            $('#stop').text("继续");
+        }
+        else{
+            $('#stop').text("暂停");
+        }
 
-
+    });
 });
 
 

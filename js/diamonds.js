@@ -44,13 +44,13 @@ var diaPoint = function(n) {
     }
 
     this.Point = new Array(7);
-    this.Point[0] = [new point(4,0),new point(5,0),new point(6,0),new point(7,0)];
-    this.Point[1] = [new point(4,0),new point(5,0),new point(6,0),new point(5,1)];
-    this.Point[2] = [new point(4,0),new point(5,0),new point(6,0),new point(4,1)];
-    this.Point[3] = [new point(4,1),new point(5,0),new point(5,1),new point(6,0)];
-    this.Point[4] = [new point(4,0),new point(5,0),new point(4,1),new point(5,1)];
-    this.Point[5] = [new point(4,0),new point(5,0),new point(6,0),new point(6,1)];
-    this.Point[6] = [new point(4,0),new point(5,0),new point(5,1),new point(6,1)];
+    this.Point[0] = [new point(5,0),new point(4,0),new point(6,0),new point(7,0)];
+    this.Point[1] = [new point(5,0),new point(4,0),new point(6,0),new point(5,1)];
+    this.Point[2] = [new point(5,0),new point(4,0),new point(6,0),new point(4,1)];
+    this.Point[3] = [new point(5,0),new point(4,1),new point(5,1),new point(6,0)];
+    this.Point[4] = [new point(5,0),new point(4,0),new point(4,1),new point(5,1)];
+    this.Point[5] = [new point(5,0),new point(4,0),new point(6,0),new point(6,1)];
+    this.Point[6] = [new point(5,0),new point(4,0),new point(5,1),new point(6,1)];
 
     return this.Point[n];
 
