@@ -50,21 +50,13 @@ var drawDiamonds = function(x,y,n) {
 
 /******初始化游戏窗口画布******/
 
-var InitcvsGame = function(point,map,n) {
+var InitcvsGame = function(map,point,n) {
     Global.cvsGame.width = Global.cvsGame.width;
     Global.cvsGame.height = Global.cvsGame.height;
     drawMap(map,n);
     drawAct(point,n);
 };
 
-
-
-/****测试函数****/
-$('#start').click(function() {
-
-   drawAct(diaPoint(4),2);
-
-});
 
 
 
